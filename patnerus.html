@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>patner</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="bg-[#65babf4f] font-poppins">
+  <nav class="w-full bg-white shadow fixed z-40">
+    <div
+      class="container mx-auto items-center flex justify-between px-4 overflow-hidden"
+    >
+      <div class="logo h-9 overflow-hidden flex items-center md:h-16">
+        <img src="/img/unnamed.png" alt="" class="w-full h-full object-contain" />
+      </div>
+      <div class="w-full md:h-16 flex relative">
+        <ul class="hidden md:flex items-center justify-center m-auto">
+          <li class="text-sm px-5 sm:px-1 font-semibold"><a class="hover:bg-[#02546480] rounded-lg transition duration-200  px-3 py-3 hover:text-white" href="index.html">Home</a></li>
+          <li class="text-sm px-5 sm:px-1 font-semibold"><a class="hover:bg-[#02546480] rounded-lg transition duration-200  px-3 py-3 hover:text-white" href="about.html">About</a></li>
+          <li class="text-sm px-5 sm:px-1 font-semibold"><a class="hover:bg-[#02546480] rounded-lg transition duration-200  px-3 py-3 hover:text-white" href="patnerus.html">Patner</a></li>
+          <li class="text-sm px-5 sm:px-1 font-semibold"><a class="hover:bg-[#02546480] rounded-lg transition duration-200  px-3 py-3 hover:text-white" href="service.html">Service</a></li>
+          <li class="text-sm px-5 sm:px-1 font-semibold"><a class="hover:bg-[#02546480] rounded-lg transition duration-200  px-3 py-3 hover:text-white" href="galery.html">Gallery</a></li>
+          <li class="text-sm px-5 sm:px-1 font-semibold"><a class="hover:bg-[#02546480] rounded-lg transition duration-200  px-3 py-3 hover:text-white" href="info.html">Info</a></li>
+          <li class="text-sm px-5 sm:px-1 font-semibold"><a class="hover:bg-[#02546480] rounded-lg transition duration-200  px-3 py-3 hover:text-white" href="">Contact</a></li>
+        </ul>
+      </div>
+
+      <button onclick="openLogin()" class="hidden md:block h-10 bg-[#018491] w-fit m-auto px-2 text-white rounded-xl">
+          Masuk/Daftar
+      </button>
+
+      <button onclick="openNavbar()" class="toggle h-16 flex items-center md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 fill-[#02546480] cursor-pointer"
+          viewBox="0 0 256 256">
+          <path
+            d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <aside class="w-full h-screen bg-white bg-opacity-90 translate-x-full fixed z-50 md:hidden transition-all duration-200 ease-in-out">
+    <div class="content backdrop-blur h-full flex items-center justify-center relative">
+      <button onclick="closeNavbar()" class="absolute top-4 right-4 z-[99]"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-[#018491] cursor-pointer" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
+
+      <ul class="flex flex-col gap-2 text-center">
+        <li><a class="text-xs text-[#018481] font-semibold" href="index.html">Home</a></li>
+        <li><a class="text-xs text-[#018481] font-semibold" href="about.html">About Us</a></li>
+        <li><a class="text-xs text-[#018481] font-semibold" href="patnerus.html">Patner</a></li>
+        <li><a class="text-xs text-[#018481] font-semibold" href="service.html">Service</a></li>
+        <li><a class="text-xs text-[#018481] font-semibold" href="galery.html">Gallery</a></li>
+        <li><a class="text-xs text-[#018481] font-semibold" href="info.html">Info</a></li>
+        <li><a class="text-xs text-[#018481] font-semibold" href="">Contact</a></li>
+        <li><button class="text-xs h-10 bg-[#018491] w-fit m-auto px-2 text-white rounded-xl cursor-pointer" onclick="openLogin()">Masuk/Daftar</button>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="login w-full h-screen bg-black bg-opacity-50 fixed z-[99]  transition-all translate-y-full duration-200 ease-in-out p-8">
+    <div class="container w-full h-full bg-slate-50 rounded-md grid justify-center px-5
+    md:max-w-[820px] mx-auto relative">
+    <div class="absolute w-8 h-8 right-2 top-2 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" onclick="closeLogin()" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
+  </div>
+      <div class="flex md:flex-row m-auto">
+        <div class="bg-[#D9D9D9] rounded-xl hidden md:flex w-1/2 px-4 py-5">
+          <img class="" src="./img/enterotp.png" alt="">
+        </div>
+      <div class="flex-col px-5">
+        <h1 class="font-bold text-xl text-slate-700 py-5 text-center md:text-left">Sign in</h1>
+      <form id="#" class="mb-4 md:mb-6 w-full">
+          <label for="email" class="block text-xs mb-1">Email Address</label>
+          <input type="email" id="email" class="bg-gray-200 appearance-none border-2  rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" placeholder="">
+      
+      
+          <label for="password" class="block text-xs mb-1">Password</label>
+          <input type="password" id="password" class="bg-gray-200 appearance-none border-2 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" placeholder="">
+          <a href="#" class="text-xs text-gray-500 text-right">
+              Lupa Password
+          </a>
+     
+      <div class="mt-4">
+          <button class="w-full bg-[#018491BF] hover:bg-[#2b7a81bf] text-white font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button">
+              Sign In
+          </button>
+      </div>
+      <div class="mt-4">
+          <button onclick="closeLogin(),openAcount()" class="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button">
+              Create New Account
+          </button>
+      </div>
+      <div class="mt-4">
+          <button class="w-full gap-3 flex items-center justify-center m-auto bg-[#D9D9D9] hover:bg-gray-400 hover:text-slate-100 text-slate-500 font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 48 48">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+            </svg>
+              Masuk/Daftar
+          </button>
+      </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <!-- Open New account -->
+  <section class="account w-full h-screen bg-black bg-opacity-50 fixed z-[99] translate-x-full transition-all duration-200 ease-in-out p-8">
+    <div class="container w-full h-full bg-slate-50 rounded-md grid justify-center px-5
+    md:max-w-[820px] mx-auto relative">
+    <div class="absolute w-8 h-8 right-2 top-2 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" onclick="closeAccount(),openLogin()" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
+  </div>
+      <div class="flex md:flex-row m-auto">
+        <div class="bg-[#D9D9D9] rounded-xl hidden md:flex w-1/2 h-full m-auto px-4 py-5">
+          <img class="" src="./img/enterotp.png" alt="">
+        </div>
+      <div class="flex-col px-5">
+        <h1 class="font-bold text-xl text-slate-700 py-5 text-center md:text-left">New Account</h1>
+        <p class="text-xs text-slate-500 mb-3">Hi, Ayo bergabung bersama kami menjadi mitra Insania Sinergia</p>
+      <form id="#" class="mb-4 md:mb-6 w-full">
+          <label for="email" class="block text-xs mb-1">Nama</label>
+          <input type="email" id="email" class="bg-gray-200 appearance-none border-2  rounded-full w-full py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 mb-3" >
+
+          <label for="email" class="block text-xs mb-1">Alamat Email</label>
+          <input type="email" id="email" class="bg-gray-200 appearance-none border-2  rounded-full w-full py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 mb-3" >
+
+          <label for="email" class="block text-xs mb-1">Password</label>
+          <input type="email" id="email" class="bg-gray-200 appearance-none border-2  rounded-full w-full py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 mb-3" >
+      
+      
+          <label for="password" class="block text-xs mb-1">Konfirmasi Password</label>
+          <input type="password" id="password" class="bg-gray-200 appearance-none border-2 rounded-full w-full py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 mb-3" >
+     
+      <div class="mt-4">
+          <button class="w-full bg-[#018491BF] hover:bg-[#2b7a81bf] text-white font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button">
+              Buat Akun
+          </button>
+      </div>
+      <div class="mt-4">
+          <button class="w-full gap-3 flex items-center justify-center m-auto border border-solid border-[#018491BF] hover:bg-[#018491BF] hover:text-slate-100 text-slate-500 font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 48 48">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+            </svg>
+              Daftar dengan Google
+          </button>
+      </div>
+
+    </form>
+  </div>
+  </div>
+  </div>
+ </section>
+
+
+      <section class="w-full h-full items-center">
+        <h1 class="text-3xl font-semibold m-auto text-center py-20">Patner Kami</h1>
+        <div class="container w-full h-fit mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-52">
+        <div class="logo w-40 h-full mt-2 md:mt-0 m-auto cursor-pointer">
+            <img src="./img/psmlogo.png" alt="">
+        </div>
+        <div class="logo w-40 h-full mt-2 md:mt-0 m-auto cursor-pointer">
+            <img src="./img/logosemen.png" alt="">
+        </div>
+        <div class="logo w-[15rem] md:w-full h-full mt-2 sm:mt-16 m-auto cursor-pointer">
+            <img src="./img/indofoo.png" alt="">
+        </div>
+        <div class="logo  h-full mt-2 md:mt-0 mx-auto cursor-pointer">
+            <img src="./img/logobsw.png" alt="">
+        </div>
+        </div>
+</section>
+
+<footer class="relative w-full py-8 bg-[#02546480]">
+    <div class="w-full px-6 mx-auto max-w-7xl">
+      <div class="-mx-8 md:-mx-5 rounded-md w-48 "><img src="./img/unnamed.png" alt=""></div>
+      <div class="justify-between grid-cols-1 gap-4 md:flex ">
+      <div class="md:flex-col my-5">
+        <div class="alamat flex flex-row mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white " viewBox="0 0 256 256"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"></path></svg>
+          <p class="text-sm font-normal px-1 text-slate-100">Jl. Perintis Kemerdekaan No.59, Kota Makassar</p>
+        </div>
+
+        <div class="flex flex-row mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white " viewBox="0 0 256 256"><path d="M144.27,45.93a8,8,0,0,1,9.8-5.66,86.22,86.22,0,0,1,61.66,61.66,8,8,0,0,1-5.66,9.8A8.23,8.23,0,0,1,208,112a8,8,0,0,1-7.73-5.94,70.35,70.35,0,0,0-50.33-50.33A8,8,0,0,1,144.27,45.93Zm-2.33,41.8c13.79,3.68,22.65,12.54,26.33,26.33A8,8,0,0,0,176,120a8.23,8.23,0,0,0,2.07-.27,8,8,0,0,0,5.66-9.8c-5.12-19.16-18.5-32.54-37.66-37.66a8,8,0,1,0-4.13,15.46Zm81.94,95.35A56.26,56.26,0,0,1,168,232C88.6,232,24,167.4,24,88A56.26,56.26,0,0,1,72.92,32.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,109.39,104c-.18.27-.37.52-.57.77L88,129.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,223.88,183.08Zm-15.88-2s-.07,0-.11,0h0l-47-21.05-24.35,20.71a8.44,8.44,0,0,1-.74.56,16,16,0,0,1-15.75,1.14c-18.73-9.05-37.4-27.58-46.46-46.11a16,16,0,0,1,1-15.7,6.13,6.13,0,0,1,.57-.77L96,95.15l-21-47a.61.61,0,0,1,0-.12A40.2,40.2,0,0,0,40,88,128.14,128.14,0,0,0,168,216,40.21,40.21,0,0,0,208,181.07Z"></path></svg>
+          <p class="text-sm font-normal px-1 text-slate-100">+6281-2345-6782</p>
+        </div>
+
+        <div class="flex flex-row mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path></svg>
+          <p class="font-normal text-sm px-1 text-slate-100">insaniasinergia@gmail.com</p>
+        </div>
+      </div>
+
+        <div class="grid justify-between grid-cols-3 gap-4">
+          <ul>
+            <p
+              class="block mb-3 font-poppins text-sm antialiased font-medium leading-normal text-white ">
+              Layanan
+            </p>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Jasa Pembukuan
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Jasa Pendampingan
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Konsultasi Pajak
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Pembuatan dan Perubahan akta
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Kuasa hukum pengadilan pajak
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <p
+              class="block mb-3 font-poppins text-sm antialiased font-medium leading-normal text-white">
+              Sumber data
+            </p>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Studi Kasus
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <p
+              class="block mb-3 font-poppins text-sm antialiased font-medium leading-normal text-white">
+              Company
+            </p>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Careers
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Youtube
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-1.5 font-poppins text-xs font-normal leading-relaxed text-slate-50 antialiased transition-colors hover:text-blue-gray-900">
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </footer>
+
+      
+  <script src="./java-script.js"></script>
+</body>
+</html>
